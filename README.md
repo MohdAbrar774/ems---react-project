@@ -1,12 +1,56 @@
-# React + Vite
+# Employee Management System (EMS) - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Employee Management System built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
+- Employee dashboard
+- Task management
+- Authentication system
+- Responsive design with Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+```bash
+npm install
+```
+
+### Development
+```bash
+npm run dev
+```
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## Technology Stack
+- **React** 19.1.0
+- **Vite** 6.3.5
+- **Tailwind CSS** 3.4.18
+- **PostCSS** 8.5.6
+
+## Project Structure
+```
+src/
+├── component/        # React components
+│   ├── Auth/        # Authentication components
+│   ├── DashBoard/   # Dashboard components
+│   └── TaskList/    # Task management components
+├── context/         # React Context
+├── pages/           # Page components
+└── utils/           # Utility functions
+```
+
+## License
+MIT
