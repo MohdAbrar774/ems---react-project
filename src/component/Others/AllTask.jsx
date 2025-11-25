@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../Context/AuthProvider'
 
 const AllTask = () => {
+  const  authData = useContext(AuthContext)
+  console.log(authData.employees)
   return (
     <div className='tasklist bg-[#1C1C1C] p-5 rounded mt-5 h-48 overflow-auto'>
       <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded'>
