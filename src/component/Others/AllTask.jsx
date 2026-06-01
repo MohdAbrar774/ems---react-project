@@ -2,28 +2,45 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../Context/AuthProvider'
 
 const AllTask = () => {
-  const [userData, setUserData] = useContext(AuthContext)
+  const [userData] = useContext(AuthContext)
+
   return (
-    <div className='tasklist bg-[#1C1C1C] p-5 rounded mt-5 '>
-      <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded'>
-        <h2 className='text-lg font-medium w-1/5'>Employee Name</h2>
-        <h3 className='text-lg font-medium w-1/5'>New Task</h3>
-        <h5 className='text-lg font-medium w-1/5'>Active Task</h5>
-        <h5 className='text-lg font-medium w-1/5'>Completed</h5>
-        <h5 className='text-lg font-medium w-1/5'>Failed</h5>
-        </div>
+    <section className="rounded-lg border border-slate-800 bg-slate-950/80 p-4 shadow-xl shadow-slate-950/20 sm:p-6">
+      <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          {userData.map(function(elem,idx){
-            return <div key={idx} className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'>
-        <h2 className='text-lg font-medium w-1/5'>{elem.firstname}</h2>
-        <h3 className='text-lg font-medium w-1/5 text-blue-600'>{elem.taskCount.active}</h3>
-        <h5 className='text-lg font-medium w-1/5 text-yellow-400'>{elem.taskCount.newTask}</h5>
-        <h5 className='text-lg font-medium w-1/5 text-white'>{elem.taskCount.completed}</h5>
-        <h5 className='text-lg font-medium w-1/5 text-red-600'>{elem.taskCount.failed}</h5>
+          <h2 className="text-xl font-semibold text-white">Team Workload</h2>
+          <p className="text-sm text-slate-400">Live task counts for every employee.</p>
         </div>
-          })}
-        </div>
-    </div>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-[720px] w-full border-separate border-spacing-y-2 text-left">
+          <thead>
+            <tr className="text-sm text-slate-400">
+              <th className="px-4 py-2 font-medium">Employee</th>
+              <th className="px-4 py-2 font-medium">New</th>
+              <th className="px-4 py-2 font-medium">Active</th>
+              <th className="px-4 py-2 font-medium">Completed</th>
+              <th className="px-4 py-2 font-medium">Failed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData?.map((employee) => (
+              <tr key={employee.id} className="bg-slate-900 text-sm">
+                <td className="rounded-l-md px-4 py-3 font-semibold text-white">
+                  {employee.firstname}
+                  <span className="block text-xs font-normal text-slate-400">{employee.email}</span>
+                </td>
+                <td className="px-4 py-3 text-cyan-300">{employee.taskCount.newTask}</td>
+                <td className="px-4 py-3 text-amber-300">{employee.taskCount.active}</td>
+                <td className="px-4 py-3 text-emerald-300">{employee.taskCount.completed}</td>
+                <td className="rounded-r-md px-4 py-3 text-rose-300">{employee.taskCount.failed}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   )
 }
 

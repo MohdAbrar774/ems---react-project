@@ -5,11 +5,13 @@ import AllTask from '../Others/AllTask'
 
 const AdminDashboard = (props) => {
   return (
-      <div className='h-screen w-full p-7'>
-        <Header changeUser={props.changeUser}/>
+      <main className='min-h-screen w-full bg-slate-900 px-4 py-5 text-white sm:px-6 lg:px-8'>
+        <div className='mx-auto flex max-w-7xl flex-col gap-6'>
+        <Header changeUser={props.changeUser} role="Admin"/>
         <CreateTask/>
         <AllTask/>
-    </div>
+        </div>
+    </main>
   )
 }
 

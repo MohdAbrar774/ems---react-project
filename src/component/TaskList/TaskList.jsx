@@ -4,23 +4,24 @@ import NewTask from './NewTask'
 import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 
-const TaskList = ({data}) => {
+const TaskList = ({data, onStatusChange, onAddFollowUp}) => {
 
   return (
-    <div  className='tasklist h-[55%] w-full mt-10 py-5 overflow-x-auto flex items-center justify-start gap-2 flex-nowrap'>
+    <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
       {data.tasks.map((elem, idx)=>{
         if(elem.active){
-          return <AcceptTask key={idx} data={data}/>
+          return <AcceptTask key={elem.id || idx} employeeId={data.id} task={elem} onStatusChange={onStatusChange} onAddFollowUp={onAddFollowUp}/>
         }
         if(elem.newTask){
-          return <NewTask key={idx}/>
+          return <NewTask key={elem.id || idx} employeeId={data.id} task={elem} onStatusChange={onStatusChange}/>
         }
         if(elem.completed){
-          return <CompleteTask key={idx}/>
+          return <CompleteTask key={elem.id || idx} task={elem}/>
         }
         if(elem.failed){
-          return <FailedTask key={idx}/>
+          return <FailedTask key={elem.id || idx} task={elem}/>
         }
+        return null
       })}
     </div>
   )

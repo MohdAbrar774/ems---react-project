@@ -2,22 +2,22 @@ import React from 'react'
 
 const TaskListNumber = ({data}) => {
   return (
-    <div className='mt-10 flex  justify-between gap-5 screen'>
-      <div className='w-[45%] rounded-xl py-9 px-6 bg-red-400'>
+    <div className='grid gap-3 sm:grid-cols-2 lg:grid-cols-4'>
+      <div className='rounded-lg border border-cyan-900/60 bg-cyan-950 p-5'>
         <h2 className='text-3xl font-semibold'>{data.taskCount.newTask}</h2>
-        <h3 className='text-xl font-medium'>New Task</h3>
+        <h3 className='mt-1 text-sm font-medium text-cyan-100'>New Tasks</h3>
       </div>
-      <div className='w-[45%] rounded-xl py-9 px-6 bg-blue-400'>
+      <div className='rounded-lg border border-emerald-900/60 bg-emerald-950 p-5'>
         <h2 className='text-3xl font-semibold'>{data.taskCount.completed}</h2>
-        <h3 className='text-xl font-medium'>Completed Task</h3>
+        <h3 className='mt-1 text-sm font-medium text-emerald-100'>Completed</h3>
       </div>
-      <div className='w-[45%] rounded-xl py-9 px-6 bg-green-400'>
+      <div className='rounded-lg border border-amber-900/60 bg-amber-950 p-5'>
         <h2 className='text-3xl font-semibold'>{data.taskCount.active}</h2>
-        <h3 className='text-xl font-medium'>Active Task</h3>
+        <h3 className='mt-1 text-sm font-medium text-amber-100'>Active</h3>
       </div>
-      <div className='w-[45%] rounded-xl py-9 px-6 bg-orange-400'>
+      <div className='rounded-lg border border-rose-900/60 bg-rose-950 p-5'>
         <h2 className='text-3xl font-semibold'>{data.taskCount.failed}</h2>
-        <h3 className='text-xl font-medium'>Failed Task</h3>
+        <h3 className='mt-1 text-sm font-medium text-rose-100'>Failed</h3>
       </div>
     </div>
   )

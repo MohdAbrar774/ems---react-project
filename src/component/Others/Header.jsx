@@ -1,20 +1,27 @@
-const Header = (props) => { 
-  // const [username,setUsername] = useState('')
-
-  // if(!data){
-  //   setUsername('Admin')
-  // }else{
-  //   setUsername(data.firstName)
-  // }
-  const logOutUser = ()=>{
-    localStorage.setItem('loggedInUser','')
+const Header = (props) => {
+  const logOutUser = () => {
+    localStorage.removeItem('loggedInUser')
     props.changeUser('')
-    // window.location.reload();
   }
+
+  const username = props.data?.firstname || props.role || 'Admin'
+
   return (
-  <div className='flex item-center justify-between'>
-   <h1 className='text-2xl font-medium'>Hii, <br /> <span className='text-3xl font-semibold'>username 👋</span></h1>
-   <button onClick={logOutUser} className='bg-red-600 h-8 w-16 font-lg rounded-sm border-white '>Logout</button>
+    <div className="flex flex-col gap-4 rounded-lg border border-slate-800 bg-slate-950/80 p-4 shadow-xl shadow-slate-950/20 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div>
+        <p className="text-sm font-medium uppercase tracking-wide text-emerald-300">
+          Employee Management System
+        </p>
+        <h1 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">
+          Hi, {username}
+        </h1>
+      </div>
+      <button
+        onClick={logOutUser}
+        className="h-10 rounded-md bg-rose-500 px-4 text-sm font-semibold text-white transition hover:bg-rose-400 sm:w-auto"
+      >
+        Logout
+      </button>
     </div>
   )
 }

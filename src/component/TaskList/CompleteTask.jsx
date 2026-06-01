@@ -1,18 +1,20 @@
 import React from 'react'
 
-const CompleteTask = () => {
+const CompleteTask = ({ task }) => {
   return (
-  <div className='flex-shrink-0 h-full p-5 w-[300px] gap-5 bg-blue-400 rounded-xl'>
-        <div className='flex justify-between items-center'>
-            <h3 className='bg-red-600 text-sm px-3 py-1 rounded'>High</h3>
-            <h4 className='text-sm'>20 feb 2024</h4>
-        </div>
-        <h2 className='mt-5 font-semibold text-2xl'>Make a youtube video</h2>
-        <p className='text-sm mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima maxime recusandae earum expedita. Ex, placeat!</p>
-      <div className='flex justify-around mt-4'>
-        <button className='w-full bg-green-500 px-2 rounded text-sm'>Complete</button>
+    <article className="flex min-h-[240px] flex-col rounded-lg border border-emerald-900/60 bg-emerald-950 p-5 shadow-lg shadow-slate-950/20">
+      <div className="flex items-start justify-between gap-3">
+        <span className="rounded bg-emerald-300 px-2 py-1 text-xs font-semibold text-slate-950">
+          {task.category}
+        </span>
+        <time className="text-sm text-emerald-100">{task.date}</time>
       </div>
+      <h2 className="mt-4 text-xl font-semibold text-white">{task.title}</h2>
+      <p className="mt-2 flex-1 text-sm leading-6 text-emerald-50/90">{task.description}</p>
+      <div className="mt-5 rounded-md bg-emerald-500/20 px-3 py-2 text-center text-sm font-semibold text-emerald-100">
+        Completed
       </div>
+    </article>
   )
 }
 

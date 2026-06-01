@@ -4,9 +4,14 @@
 
 body{
   color: #ffff;
-  background-color: #111;
+  background-color: #0f172a;
+  min-width: 320px;
 }
 
 .tasklist::-webkit-scrollbar{
   display: none;
+}
+
+* {
+  box-sizing: border-box;
 }
