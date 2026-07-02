@@ -296,6 +296,68 @@ const employees = [
         followUps: []
       }
     ]
+  },
+   {
+    id: 6,
+    firstname: "Ankit",
+    email: "employee5@example.com",
+    password: "123",
+    taskCount: {
+      active: 3,
+      newTask: 2,
+      completed: 0,
+      failed: 5
+    },
+    tasks: [
+      {
+        id: "task-6-1",
+        title: "Customer Support Emails",
+        description: "Respond to customer queries.",
+        date: "2025-11-19",
+        category: "Support",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        followUps: []
+      },
+      {
+        id: "task-6-2",
+        title: "Complaint Resolution",
+        description: "Resolve two pending customer complaints.",
+        date: "2025-11-18",
+        category: "Support",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        followUps: []
+      },
+      {
+        id: "task-6-3",
+        title: "Feedback Form Update",
+        description: "Improve UI for feedback form.",
+        date: "2025-11-21",
+        category: "Improvement",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        followUps: []
+      },
+      {
+        id: "task-6-4",
+        title: "Training Session",
+        description: "Attend internal product knowledge training.",
+        date: "2025-11-22",
+        category: "Training",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        followUps: []
+      }
+    ]
   }
 ];
 
